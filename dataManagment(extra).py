@@ -1,4 +1,4 @@
-# Este programa fue ejecutado en un notebook para formatear estéticamente los resultados.
+# Se importa pandas para trabajar con dataframes.
 import pandas as pd
 
 # Lista de leads
@@ -11,7 +11,7 @@ leads = [
     # ... más leads
 ]
 
-# Se transforma en un dataFrame para mejorar el manejo de la estructura.
+# Se transforman los diccionarios en un dataFrame, para mejorar el manejo de la estructura.
 df_leads = pd.DataFrame(leads)
 
 # Se crea la función para filtrar la data, por defecto tiene a Medellín como locación.
@@ -19,7 +19,7 @@ def filter_leads(location = "Medellín"):
     filtered_leads = df_leads.loc[df_leads['location'] == location]
     return filtered_leads
 
-# Ordena un dataframe de entrada con descendente, según los valores de la columna budget.
+# Ordena un dataframe de entrada en orden descendente, según los valores de la columna budget (Presupuesto).
 def budget_order(data_structure = df_leads):
     sorted_leads_desc = data_structure.sort_values(by='budget', ascending=False)
     return sorted_leads_desc

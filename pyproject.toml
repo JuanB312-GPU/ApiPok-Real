@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "technictest"
+version = "0.0.1"
+description = "Technical test for laboral application, using flask and api on web."
+authors = ["JUAN DAVID MARTINEZ MONROY <judamartinezm@udistrital.edu.co>"]
+license = "GNU/GPL 3"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

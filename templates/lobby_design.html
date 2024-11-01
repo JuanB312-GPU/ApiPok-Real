@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Búsqueda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        .search-container input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .data-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .data-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 200px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .data-card h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .data-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor de búsqueda -->
+    <form action="/lobby" method="post">
+        <input type="text" name="pokemon" id = "pokemon" placeholder="Escribe tu búsqueda aquí">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Contenedor de datos -->
+    <div class="data-container">
+        <div class="data-card">
+            <h3 id="name">Nombre</h3>
+            <p id="name_space">{{ name }}</p>
+        </div>
+        <div class="data-card">
+            <h3 id="height">Altura</h3>
+            <p id="height_space">{{ height }}</p>
+        </div>
+        <div class="data-card">
+            <h3 id="weight">Peso</h3>
+            <p id="weight_space"></p>
+        </div>
+        <!-- Puedes agregar más tarjetas de datos si es necesario -->
+    </div>
+
+    <!-- Script para funcionalidad de búsqueda -->
+    <script>
+        function buscar() {
+            const query = document.getElementById('search').value;
+            // Ejemplo de cómo rellenar datos en las etiquetas
+            document.getElementById('dato1-titulo').textContent = `Resultado para: ${query}`;
+            document.getElementById('dato1-descripcion').textContent = "Este es el resultado de la búsqueda.";
+            document.getElementById('dato2-titulo').textContent = `Más información sobre: ${query}`;
+            document.getElementById('dato2-descripcion').textContent = "Detalles adicionales del resultado.";
+            document.getElementById('dato3-titulo').textContent = `Análisis de: ${query}`;
+            document.getElementById('dato3-descripcion').textContent = "Un análisis detallado sobre el término buscado.";
+        }
+    </script>
+
+</body>
+</html>

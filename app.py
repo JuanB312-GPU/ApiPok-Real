@@ -128,7 +128,7 @@ def queri_validation(mode, element):
             "error": "External API response, it is not in JSON format."
         }), 500
 
-# Rutas, se crearon dos rutas para operaciones Get, otras dos para operaciones Post.
+# EndPoints, se crearon dos para operaciones Get, otros dos para operaciones Post.
 app = Flask(__name__)
 
 @app.route('/pokemon/<string:pokemon_name>', methods = ['GET'])
